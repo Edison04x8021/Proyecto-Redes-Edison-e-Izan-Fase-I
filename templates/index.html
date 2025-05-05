@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="utf-8">
+  <title>Formulario SNMP</title>
+</head>
+<body>
+  <h1>Formulario de consulta SNMP</h1>
+  <form method="post" action="/snmp">
+
+    <label>IP del agente:</label>
+    <input type="text" name="agent_ip" required placeholder="Ej. demo.pysnmp.com"><br><br>
+
+    <label>Versión SNMP:</label>
+    <select name="version" required>
+      <option value="1">1</option>
+      <option value="2c" selected>2c</option>
+    </select><br><br>
+
+    <label>Cadena de comunidad:</label>
+    <input type="text" name="community" value="public"><br><br>
+
+    <label>OID (escrito manualmente):</label>
+    <input type="text" name="oid" required placeholder="Ej. 1.3.6.1.2.1.1.1"><br><br>
+
+    <label>Operación SNMP:</label>
+    <select name="operation" required>
+      <option value="get" selected>get</option>
+      <option value="next">next</option>
+      <option value="bulkwalk">bulkwalk</option>
+      <option value="set">set</option>
+    </select><br><br>
+
+    <label>Tipo de dato:</label>
+    <select name="set_type">
+      <option value="">--Seleccionar--</option>
+      <option value="Integer">Integer</option>
+      <option value="OctetString">OctetString</option>
+    </select><br><br>
+
+    <label>Valor:</label>
+    <input type="text" name="set_value" placeholder="Valor a escribir"><br><br>
+
+    <button type="submit">Enviar consulta</button>
+  </form>
+</body>
+</html>

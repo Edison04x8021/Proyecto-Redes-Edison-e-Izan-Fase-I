@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="utf-8">
+  <title>Resultado SNMP</title>
+</head>
+<body>
+  <h1>Resultado</h1>
+
+  {% if result %}
+    {% for linea in result %}
+      <p>{{ linea }}</p>
+    {% endfor %}
+  {% else %}
+    <p>No se recibió ninguna respuesta del agente SNMP.</p>
+  {% endif %}
+
+  <hr>
+  <a href="/">Nueva consulta</a>
+</body>
+</html>
