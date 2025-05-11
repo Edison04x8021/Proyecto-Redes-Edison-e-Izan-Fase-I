@@ -4,6 +4,19 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <meta charset="utf-8">
   <title>Formulario SNMP</title>
+  <script>
+    function toggleCommunity() {
+        var input = document.getElementById("community");
+        var button = document.getElementById("toggleButton");
+        if (input.type === "password") {
+            input.type = "text";
+            button.textContent = "🙈";
+        } else {
+            input.type = "password";
+            button.textContent = "👁️";
+        }
+    }
+  </script>
 </head>
 <body>
   <h1>Formulario de consulta SNMP</h1>
@@ -19,7 +32,11 @@
     </select><br><br>
 
     <label>Cadena de comunidad:</label>
-    <input type="text" name="community" value="public"><br><br>
+    <div class="input-container">
+      <input type="password" id="community" name="community" value="public">
+      <button type="button" id="toggleButton" onclick="toggleCommunity()">👁️</button>
+    </div>
+    <br><br>
 
     <label>OID (escrito manualmente):</label>
     <input type="text" name="oid" required placeholder="Ej. 1.3.6.1.2.1.1.1"><br><br>

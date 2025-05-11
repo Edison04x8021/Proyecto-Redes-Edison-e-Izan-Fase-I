@@ -4,14 +4,14 @@ body {
     color: #2e003e;
     margin: 0;
     padding: 20px;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: #6a0dad; /* color principal */
     text-align: center;
-  }
-  
-  form {
+}
+
+form {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -19,41 +19,68 @@ body {
     border: 2px solid #6a0dad;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(106, 13, 173, 0.3);
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
-  }
-  
-  input, select, button {
+}
+
+input, select, button {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-  }
-  
-  button {
+}
+
+button {
     background-color: #6a0dad;
     color: white;
     border: none;
     margin-top: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #520c9f;
-  }
-  
-  p {
+}
+
+p {
     max-width: 700px;
     margin: 10px auto;
     padding: 10px;
     background-color: #ede3f9;
     border-left: 5px solid #6a0dad;
-  }
-  
+}
+
+/* 🎨 Estilo para el campo de comunidad con botón a la derecha */
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container input {
+    flex: 1; /* El campo de texto ocupa la mayor parte del espacio */
+}
+
+.input-container button {
+    width: auto; /* Ajusta el ancho al contenido */
+    margin-left: 10px; /* Espacio entre el input y el botón */
+    padding: 5px;
+    font-size: 14px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #520c9f;
+}
